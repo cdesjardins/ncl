@@ -62,6 +62,12 @@
     <Lib>
       <OutputFile>$(OutDir)ncl.lib</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>mkdir ..\..\..\install\lib\
+mkdir ..\..\..\install\include\ncl
+copy $(OutDir)ncl.lib ..\..\..\install\lib\
+copy $(SolutionDir)..\ncl\*.h ..\..\..\install\include\ncl</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -75,6 +81,12 @@
     <Lib>
       <OutputFile>$(OutDir)ncl.lib</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>mkdir ..\..\..\install\lib\
+mkdir ..\..\..\install\include\ncl
+copy $(OutDir)ncl.lib ..\..\..\install\lib\
+copy $(SolutionDir)..\ncl\*.h ..\..\..\install\include\ncl</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\ncl\nxsassumptionsblock.cpp" />
