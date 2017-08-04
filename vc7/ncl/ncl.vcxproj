@@ -54,7 +54,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
@@ -63,16 +63,16 @@
       <OutputFile>$(OutDir)ncl.lib</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir ..\..\..\install\lib\
+      <Command>mkdir ..\..\..\install\lib\ncl
 mkdir ..\..\..\install\include\ncl
-copy $(OutDir)ncl.lib ..\..\..\install\lib\
+copy $(OutDir)ncl.lib ..\..\..\install\lib\ncl
 copy $(SolutionDir)..\ncl\*.h ..\..\..\install\include\ncl</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -82,9 +82,9 @@ copy $(SolutionDir)..\ncl\*.h ..\..\..\install\include\ncl</Command>
       <OutputFile>$(OutDir)ncl.lib</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir ..\..\..\install\lib\
+      <Command>mkdir ..\..\..\install\lib\ncl
 mkdir ..\..\..\install\include\ncl
-copy $(OutDir)ncl.lib ..\..\..\install\lib\
+copy $(OutDir)ncl.lib ..\..\..\install\lib\ncl
 copy $(SolutionDir)..\ncl\*.h ..\..\..\install\include\ncl</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
